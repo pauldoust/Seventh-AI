@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+	canvas{
+	  width:1000px !important;
+	  height:600px !important;
+
+	}
+</style>
+    <meta charset="UTF-8">
+    <title>Seventh AI</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>	
+	<script type="text/javascript"> 
+	debugger;
+//	var a = {{data|safe}};
+//	chartLabels = Object.keys(a);
+//	alert(Object.keys(jsonObject));
+// Bar chart
+
+	</script>
+
+
+</head>
+<body>
+<h2>Patent Application</h2>
+<canvas id="br" ></canvas>
+<script>
+	var a = {{data|safe}};
+	chartLabels = Object.keys(a);
+	chartValues = Object.values(a);
+
+new Chart(document.getElementById("br"), {
+    type: 'bar',
+    data: {
+//      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      labels: chartLabels,
+      datasets: [
+        {
+          label: "Terms Probability",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+//          data: [10,10,10,10,10]
+		data: chartValues
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Terms Probability'
+      },
+	  responsive: true,
+	  maintainAspectRatio: false,
+	   scales: {
+        yAxes: [{
+            ticks: {
+                fontSize: 40
+            }
+        }],
+		  xAxes: [{
+            ticks: {
+                fontSize: 20
+            }
+        }]
+    }
+
+    }
+});	
+</script>
+<body>
+	
+
+
+</body>
+</html>
